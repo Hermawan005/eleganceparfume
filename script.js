@@ -4,7 +4,7 @@ const kecamatanDropdown = document.getElementById("kecamatan");
 const kelurahanDropdown = document.getElementById("kelurahan");
 
 // Memuat daftar provinsi
-fetch("https://wilayah.id/api/provinces.json")
+fetch("https://ibnux.github.io/data-indonesia/provinsi.json")
     .then(response => response.json())
     .then(data => {
         data.data.forEach(provinsi => {
@@ -19,7 +19,7 @@ fetch("https://wilayah.id/api/provinces.json")
 provinsiDropdown.addEventListener("change", function () {
     const provinsiId = this.value;
     if (provinsiId) {
-        fetch(`https://wilayah.id/api/regencies/${provinsiId}.json`)
+        fetch(`https://ibnux.github.io/data-indonesia/kabupaten/${provinsiId}.json`)
             .then(response => response.json())
             .then(data => {
                 kotaDropdown.innerHTML = '<option value="">-- Pilih Kota --</option>';
@@ -39,7 +39,7 @@ provinsiDropdown.addEventListener("change", function () {
 kotaDropdown.addEventListener("change", function () {
     const kotaId = this.value;
     if (kotaId) {
-        fetch(`https://wilayah.id/api/districts/${kotaId}.json`)
+        fetch(`https://ibnux.github.io/data-indonesia/kecamatan/${kotaId}.json`)
             .then(response => response.json())
             .then(data => {
                 kecamatanDropdown.innerHTML = '<option value="">-- Pilih Kecamatan --</option>';
@@ -59,7 +59,7 @@ kotaDropdown.addEventListener("change", function () {
 kecamatanDropdown.addEventListener("change", function () {
     const kecamatanId = this.value;
     if (kecamatanId) {
-        fetch(`https://wilayah.id/api/villages/${kecamatanId}.json`)
+        fetch(`https://ibnux.github.io/data-indonesia/kelurahan/${kecamatanId}.json`)
             .then(response => response.json())
             .then(data => {
                 kelurahanDropdown.innerHTML = '<option value="">-- Pilih Kelurahan/Desa --</option>';
