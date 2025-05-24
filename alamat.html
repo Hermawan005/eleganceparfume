@@ -1,0 +1,60 @@
+       <!DOCTYPE html>
+        <html lang="id">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Form Alamat Pengiriman</title>
+            <link rel="stylesheet" href="style.css">
+        </head>
+        <body>
+        
+        <div class="form-container">
+            <h2>Form Alamat Pengiriman</h2>
+            <form action="https://formspree.io/f/xdkgroaa" method="post">
+                <label for="nama">Nama Lengkap</label>
+                <input type="text" id="nama" name="nama" required>
+        
+                <label for="telepon">Nomor Telepon</label>
+                <input type="tel" id="telepon" name="telepon" required>
+        
+                <label for="alamat">Alamat Lengkap</label>
+                <textarea id="alamat" name="alamat" rows="4" required></textarea>
+        
+                <label for="provinsi">Provinsi</label>
+                <select id="provinsi" name="provinsi" required>
+                    <option value="">-- Pilih Provinsi --</option>
+                </select>
+        
+                <label for="kota">Kota</label>
+                <select id="kota" name="kota" required>
+                    <option value="">-- Pilih Kota --</option>
+                </select>
+        
+                <label for="kecamatan">Kecamatan</label>
+                <select id="kecamatan" name="kecamatan" required>
+                    <option value="">-- Pilih Kecamatan --</option>
+                </select>
+        
+                <label for="kelurahan">Kelurahan/Desa</label>
+                <select id="kelurahan" name="kelurahan" required>
+                    <option value="">-- Pilih Kelurahan/Desa --</option>
+                </select>
+        
+                <label for="kodepos">Kode Pos</label>
+                <input type="text" id="kodepos" name="kodepos" required>
+        
+                <a href="submit.html"><button type="submit">Simpan Alamat</button>
+            </form>
+        </div>
+        
+        <script src="script.js"></script>
+    <script>
+        function skipFormAndRedirect(event) {
+            event.preventDefault(); // Mencegah submit bawaan form
+            window.location.href = "index.html"; // Redirect langsung
+        }
+    </script>
+    <form onsubmit="skipFormAndRedirect(event)">
+        <button>kembali</button>
+    </form>
+        
